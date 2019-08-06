@@ -27,3 +27,24 @@ Spring Framework
 
     In Spring
         Service service = BeanFactory.get(service);
+
+
+    Spring Annotations  --  Look up more in spring docs
+        some common ones
+        @Component
+        @Service
+        @Qualifier
+        @Value
+        @Resource
+        @AutoRouter
+        @
+
+        By Type
+        By Name
+
+        Common lifecycle annotation
+        pre-construct 
+        post-destroy 
+
+        Know lifecycle
+        Know scope of bean
