@@ -1,0 +1,42 @@
+Advanced hibernate
+
+    jpa- java persistance api
+        old standard
+
+    Scans all entities makes relation to rows
+
+    Going from transient to persistant
+        get() vs load()
+        save vs persistance update vs merge
+                different because hybernate has 2 fetching strategies
+        Eager vs Lazy
+            Eager loads everything at one
+            Lazy loads things as they are requested.
+                less wasteful and good for larger webpages
+                if you do load(movie) the movie.director will have a proxy value until movie.director.name is used, then hybernate fetches information
+            
+        Cascading strategies( Useful for updating, changing children at the same time as parent, ie persist movie and director){
+            persist
+            merge
+            update
+            -good for deleting orphans
+            -all
+        }
+
+    Fetching Strategies
+        Multiplicity
+            @OnetoOne(args)       ie     @OnetoOne(fetch="lazy")
+
+    Caching strategies
+        L1 caching -session scope
+        L2 caching -sessionFactory scope
+            -3rd party vender (ehcache)
+
+    SQL View 
+
+
+    Named Query
+        @Entity
+        @NamedQuery{
+            @NamedQuery("name", HQU);
+        }

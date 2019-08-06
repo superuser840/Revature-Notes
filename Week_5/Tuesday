@@ -1,0 +1,106 @@
+DevOps Pipeline
+    Each arrow is a stage
+
+                            -->QA
+    src-->scm-->build Serve-->UAT   --> Quality, Gate, Prod
+                            -->Staging
+
+
+    Continuous Integration + Continuous Delivery
+            Tools
+        Shell scripts and crontab
+        build server
+            -Jenkins
+            Travis-CI 
+            Circle-CI 
+
+        Jenkins 2+
+            JenkinsFile
+                -writen in groovy, scripting language made for the JVM
+
+            --Jenkinsfile--
+            #!/bin/groovy
+            pipeline{
+                node{
+                    stages{
+                        stage("script"){
+                            sh git pull
+                        }
+                        stage("build"){
+                            sh mvn compile
+                        }
+                    }
+                }
+            }
+
+            SonarQube
+            SonarCloud
+            can act as a qualityGate --> codesmells(potential bugs)
+                quality gate acts as a check of code to 
+
+            KPI - key performance index
+            Code coverage - how much code you test for handling the quality
+
+
+CLOUD 
+    Alows companies to dynamically scale services
+    History
+        On Premesis
+            Heirarchy(top layer based on layer beneath it)
+            Application
+            Data 
+            App services (tomcats)
+            Libraries/MiddWare
+            OS
+            Virtualization - Virtual machines running on hardware
+            Hardware
+                -servers
+                -server machines
+                -hard drives
+            Networking
+
+Cloud is just a copy of on premesis architecture
+    Different Levels
+        IaaS - Infrastructure as a service
+            -Handles networking to Virtualization
+            -lets user handle all software
+        PaaS - Platform as a service
+            -Application and Data handled by User, everything else handled by Cloud
+            -Mostly for writing and Deploying applications
+            -Heroku
+        SaaS - Software as a service
+            -Handles everything on the Heirarchy
+            -Essentially just a service
+            -Gmail
+
+    AWS Became the biggest name in the Cloud vendor market
+        Began with Iaas - EC2, elastic cloud compute service
+
+            autoscaling groups- pay for what you use
+                -load balancing system  
+                -sends traffic based on where its least exposed
+            security groups
+
+        after Netflix became popular with IaaS
+            -Amazon started Paas-RDS, Elastic Beanstalk
+                -most are PaaS now 
+        
+        SaaS --> Gmail, Netflix, others began 
+
+    Setting up AWS
+        -IAM role
+            account managment role
+        -Create VPC - virtual private cloud
+            -immitate a single network
+        Security groups
+            -What IPs, ports, and protocols are allowed to to access
+
+For qc
+
+RDS and S3 Bucket-- know
+setup and navigate EC2
+
+
+
+learn ssh command with pem key for AWS
+or use Beanstalk

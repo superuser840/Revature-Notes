@@ -1,0 +1,36 @@
+Hybernate is a framework wraparound for jdbc
+    similar to how jax.rs wrapped around servlets
+        -jdbc
+        -http
+
+    ORM tool - object relational mapping
+        interfaces
+            -configuration
+             -sessionFactory
+                -session 
+                     -generate query
+                     criteria
+                     transaction
+
+        all wrappers and parallels to jdbc
+        DriverManager
+            Connection
+                Statements
+                    ResultSets
+
+
+        
+    Hybernate Entities
+        -mapped to a row in a table
+        -mapped in hbm.xml file or by @Entity
+
+        Has States 
+            1) Transient
+                exists in java memory
+            2) Persistant
+                .save, .persist
+                going from java memory to direct connection/link to database
+            3) Detached
+                After severing connection to session
+                Still in java memory but not linked
+                can reattach after creating new session

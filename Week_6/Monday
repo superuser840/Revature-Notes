@@ -1,0 +1,29 @@
+Spring Framework
+    Deploy Injection Container
+    Alternative to J2EE Enterprise Java Bean
+        -a Bean is essentially a fully functioning generate class
+        Jax-RS utilize bean
+        people didnt want to keep creating bean with getters and setters, hashcode, to string etc.
+    Wanted something to handle POJO
+    Became modern bean as we know it
+
+    Automatic Dependency Injection
+        When an object depends on another object
+            ie. a constructor being used in another class
+            eg. Calling a connectionUtil in a Dao
+        Constructor and Setter injection      
+
+    Dependency injection in Spring
+        Connection conn
+            public Dao(Connection conn){
+            this.conn = conn;
+            }
+    
+    Factory logic
+        create a bean factory with good logic to properly handle their beans
+            Connection connConnection();
+            DaO dao = new DaO(conn);
+            Service service = new connection 
+
+    In Spring
+        Service service = BeanFactory.get(service);

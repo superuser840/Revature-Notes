@@ -1,0 +1,136 @@
+Dev Ops..
+    The flow of command for an applicatoin to go from development to deployment
+
+    Development...create app 
+    --> Test... integrate, UAT, e2e 
+    --> Ops... deploy to servers
+
+    Webapps make bug fixes easier, more important
+        - version is always up to date
+        - user 'downloads' most updated version every time a site is accessed
+
+        -ordinary users began using services, non-developers generally don't put up with bugs
+    ==Caused DevOps to muddy the walls, everybody does everything
+            -Much of the process is automated
+    Bugs can be fixed in 2 hours
+        -A bug is known, sent to Devs 
+        -Testing is automated and only stops on Red Light
+        -Ops have scripting services to deploy code easily
+
+    Essentially eliminated Desktop Apps in favor of Webapps, 
+
+
+    Agile/XP/Kanban/Scrum - improve process of product development
+    SDLC - Software Development Life Cycle
+        -Big Bang  -- start coding and finish when you're finished
+        -Waterfall  -- iterative process
+        -Scrum  -- 
+
+
+        Gitflow -- Continuous Integration  - CI  -automated build
+            Master-Version users are seeing
+                Dev - most built non-deployed version
+                    Feature - login
+                    Feature - hotfix
+                <---
+            <---
+            Update Master
+
+        Ops Automation split into CI and CD 
+
+        Continuous Integration
+
+        Continuous Delivery
+            -Delivery to Integration Testing  -1
+            -or Delivery to UAT environment  -2 
+            or straight to deployment.      -3
+
+            Essentially a pipeline for how things are getting delivered
+
+
+Linux
+    -most distros are opensource, lightweight, and share simple usage
+    Popular distros
+        -Ubuntu (mostly in UK)  company based in UK
+            -Debian is Ubuntu's root
+        -OpenSuSe (Europe)  Company based in germany
+        -RedHat (US)    Company based in US
+            -fedora
+            -RHEL - Redhat Enterprise Linux
+            -CentOS
+            -AmazonLinux -somewhat based on CentOS
+
+    Common Things for most linux distros
+
+        Package managers
+            -apt for Ubunto
+            -yum for RedHat
+                rpm --ofline package manager for 
+        
+
+        CoreUtils
+            CD
+            ls
+            mv
+            mkdir
+            touch
+            cat
+            grep
+            sed
+            
+
+        editors
+            vim
+            nano
+
+        FileSystem  -- Evenrthing is a file, can navigate through using full path or relative path.
+            root  /
+            in root
+                /usr
+                    /usr/bin
+                /etc
+                    /etc/apt
+                    --Contains Config Files 
+                /home
+                    /home/username
+                /
+
+        shell { reads commands, parses options and interprates meaning
+            Different from terminal by (
+                emulates a terminal, doesn't directly access a mainframe
+        )  Loads env Variables upon startup, eg. PATH
+        }
+            *bash*
+            zsh
+
+
+    chmod {number} {filename}
+        --number convention
+        -100  -read
+        -200  -execute
+        -400  -write
+        -each number place is for each user
+            first is user
+            second is user group
+            third is everybody on computer
+            eg. chmod 777 file -- gives every user file 
+
+    man 
+        manual page 
+        opens in less
+        can scroll, page up page down.
+
+Linux Chrontab
+    -taskmanager to run shell scripts over intervals
+
+    crontab -e2
+
+        * * * * * sh /root/ci.sh
+        minute/hour/day/week/month
+
+
+
+docker run --rm -it -p 8080:8080 jenkins
+
+Jenkins is a Java .war app, it runs on tomcat ie. 8080
+    
