@@ -1,31 +1,3 @@
-Spring framework POJO
-    Dependency Injection
-        Container
-        IOC (inversion of Control?) aka Dependency Injection
-
-        BeanFactory
-        Wrapped by 
-        Application context
-
-            utilize bean scopes and lifecycle
-
-        Core has annotations and factory settings
-        Beans are essentially your annotated and routed classes
-            XML     
-                <beans
-                <bean
-            java
-                @component/@repository
-                @service/@controller
-
-        @controller handles your endpoints
-            handles things where you call @path
-
-        @repository(Daos) connects to @service(middle man) to send to @controller(endpoints/controller)
-
-    ContextComponenScan(@ComponentScan[what package to scan])
-
-
 
     AOP - aspect oriented programing
         more of a concept than an officiail language methodology base
