@@ -1,0 +1,19 @@
+
+
+Setup and configuration for Spring and Hibernate
+    Pom dependencies
+        spring framework 
+        webmvc
+        aspectweaver
+        javaxservlet
+        commons-dbcp
+
+    in annotationConfig
+        @Bean
+        public DataSource
+        Use basicDataSource.setX to set 
+            DriverManager
+            Url
+            Username
+            Password
+        

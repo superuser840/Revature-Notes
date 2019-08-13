@@ -1,0 +1,89 @@
+                                        Soap!
+
+What is a Webservice
+    Any exposed API
+        can use tcp ( Http, smtp, ftp)
+
+
+        API's should have some sort of specification/Rules
+            accept/reject/error Rules
+            Some doccumentation
+
+
+    RESTful API constraints
+        swagger(OpenAPI)
+        can send JSON/XML inside http request/response
+
+    Before rest there was SOAP 
+        WSDL file - integral, cannot work without
+            Carriers for envelope (protocol) - XML Document 
+                Http
+                smtp
+                ftp
+
+        Requests not really used, instead a client is essentially downloaded.
+        
+
+Whats in the WSDL file? Web Service Definition Language
+
+    XML document Essentialy the rules as to how to use the file
+    <Definition
+        <type
+        <message - what envelope looks like (method signature) format of envelope, header and body of envelope sent to port type and operation
+        <porttype - methods youre recieving, (individual operations)
+        <operation - for methods
+        <binding - for methods
+        <service - endpoints
+        <ports - endpoints
+        <soap:address - endpoint location
+
+>>>Defines how to write envelope<<<
+
+envelope is another xml document (carried in the body of http) only posts, no gets
+
+<envelope
+    <head - metadata, 
+    <body
+        <fault> - error handling, status code
+
+
+        Decripting the WSDL
+            just use a browser extention WSDLer
+
+
+access wsdl file with endpoint_path?wsdl
+
+
+
+Creating a SOAP Service
+
+useful annotations
+@WebService: Define to be web service
+@WebMethod: Define method to be implemented in service
+@WebParam: Define paramater to be used in WebMethod.
+
+    import javax.jws.Webservice
+
+    @WebService
+    class Definition
+
+        @WebMethod
+        method
+
+        public static void main(
+            Endpoint.publish("http://localhost:8080/hello, new BasicSoapDriver())
+        )
+
+
+
+
+
+
+Soap Cont.
+    Simple Object Access Protocol
+    consider the wsdl a contract. if its not followed, the operation will not be accessed.
+
+    Apache Crossfire, larger framework that implements Jax-ws. used for soap services
+    Apache CF + Spring works together
+
+
