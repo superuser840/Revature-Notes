@@ -1,0 +1,70 @@
+ESB
+
+    Enterprise Service Bus
+        integrating more and more processes becomes exponentially dificult with increasing number of programs to integrate from
+        exponentially non-scalable
+        ----------
+
+
+MicroService architecure design
+    Benifits:
+        Modularity
+        Scalibility
+        Fix parts of a program while keeping the rest of the program online
+        helps improve uptime
+
+
+    Drawbacks:
+
+        all Infrastructure services exists because there are hazards
+        Talking between two servers is slower than communication between JVMs
+        its more likely for an http call to be lost than a jvm service call
+        
+
+
+    Compiling a number of services and putting it into one application
+        Imagine a bunch of ants acting as a raft or a bridge (many parts make a whole)
+    Concerned about whats going on inside the program
+    
+    Can fix parts of a program without breaking the whole thing
+    Good for scaling
+    Netflix
+
+    Doesn't use buisness logic to wire things together.
+        We want Lose Coupling - ---
+
+    Infrastructure services - 
+        The whole point is to piece the microservices back together.
+        eg. separating movie and directors into separate jars, then using an Infrastructure service to connect the JVM's back together.
+        When you break up microservices, JVM's separate and no longer talk to eachother
+        
+        Gateway/routing services 
+            Gives access to all other services, provides the illusion that all of the microservices act as one application.
+            Handles routing to services
+                Gets a request from (ie tablet) and routes to the tablet service, then upon request sends to 
+        Discovery/Registry Service
+            Gateway recieves request and talks to Discovery to find port and ip location of microservice.
+            A lookup table 
+            Essentially a directory for all existing microservices
+        Configuration service
+            Injects application.properites to instances when needed
+            Should be secure to prevent information leaks and hacking
+        Message Broker
+            Want loose coupling, but we want things to be able to "communicate"
+            Allows microservices to talk through a broker, 
+        Monitoring/Tracing
+            LogTraces - follow a request path through multiple microservices.
+            recently watched 
+        Circuit Breaking
+            Exception handling - acts as a catch block in a try catch block
+             -- in the event that a microservice would have a catastrophic failure, do X instead.
+            Eg. MovieService needs something from directorService, then an exception occurres in director which causes problems in movies.
+            Chain reactions can be caused by one microservice messing up, causing a cascade
+            
+
+APIs we'll probably use 
+    Gateway = Zuul
+    Discovery/Registry = Eureka/Ribbon
+    Monitoring/Tracking = Zipkin
+    Circuit Breaker = Hysterix
+    Message Broker = Khafka
