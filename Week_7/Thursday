@@ -1,0 +1,59 @@
+Protocols
+
+Connection to Database
+
+Published, Post to a channel
+
+MessageBroker
+    Subscribe to channel
+    -Sending messages to and from director Microservice
+    Store messages and posts. creates a queue of messages and requests to handle
+
+    JMS
+    AMQP
+
+
+    ACID vs BASE
+
+    Use docker to run MessageBroker
+
+Use Spring.io for demonstrations on Microservices
+
+
+Docker 
+
+    Virtualization
+
+    HyperVisor
+        Like having multiple servers on one server,
+        Steals Resources from main architecture
+        When creating a virtual machine you have to set ram/cpu power for 
+
+
+    Containerization
+----
+
+
+followed by
+Orchestration
+
+        Docker Swarm
+        Google Borg - kubernetes
+            Master
+            >>Talks to Kubes - has view to see all docker images
+                Docker-merge
+
+
+Each part of webservice is run on a docker container 
+    script with docker run command for each Microservice
+        for simple Microservice
+    
+
+
+    docker-compose
+
+
+    docker run -args
+        image
+
+    
